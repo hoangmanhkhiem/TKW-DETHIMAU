@@ -1,33 +1,33 @@
 // coding implementation
-var check_email = /^\w+@\w{3,}\.com$/i; 
+var ck_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+var ck_rating = /^[0-9]{0,5}$/;
 
-function commentForm(f)
-{
-    if(f.email.value.length == 0) {
-        alert("Email must be not null");
-        f.email.focus();
-        return ;
+function validate(form){
+    var email = form.email.value;
+    var rating = form.rating.value;
+    var errors = [];
+
+    if(!ck_email.test(email)) {
+        errors[errors.length] = "You must enter a valid email address.";
     }
-    if(check_email.test(f.email.value) == false) {
-        alert("Email is not valid");
-        f.email.focus();
-        return;
+
+    if(!ck_rating.test(rating)) {
+        errors[errors.length] = "You must enter a valid rating";
     }
-    if(f.com.value.length == 0 ) {
-        alert("Comment must be not null");
-        f.com.focus();
-        return;
+
+    if(errors.length > 0){
+        reportErrors(errors);
+        return false;
     }
-    if(f.rate.value.length == 0) {
-        alert("Rating must be not null");
-        f.rate.focus();
-        return;
+    return true;
+}
+
+function reportErrors(errors){
+    var msg = "Please Enter Valide Data...\n";
+    for(var i=0; i<errors.length; i++){
+        var numError = i+1;
+        msg += "\n" + numError + ". " + errors[i];
     }
-    if(isNaN(f.rate.value)) {
-        alert("Rating must be a number");
-        f.rate.focus();
-        return;
-    }
-    alert("Success"); 
+    alert(msg);
 }
 // end coding implementation
