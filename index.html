@@ -49,14 +49,14 @@
 						It is common to do entire web layouts using the CSS float property. Float is easy to learn - you just need to remember how the float and clear properties work. Disadvantages: 
 					</div>
 					<div class="frmcomment">
-					<form action="" name="comment">
+					<form action="#" onsubmit="return validate(this);" name="form">
 		              <label for="email">Email</label> <br>
 		              <input type="text" name="email" id="email"> <br>
 		              <label for="com">Comment</label> <br>
 		              <textarea name="com" id="com" cols="30" rows="5"></textarea> <br>
 		              <label for="rate">Rating</label>
 		              <input type="text" name="rate" id="rate" size="5"> <br>
-		              <input type="submit" value="send" name="submit" id="submit" onclick="commentForm(document.forms.comment);">
+		              <input type="submit" value="send" name="submit" id="submit">
 		            </form>	
 
 				</div>
