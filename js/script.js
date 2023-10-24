@@ -1,5 +1,6 @@
 // coding implementation
-var check_email = /^\w+@\w{3,}\.com$/i; 
+var check_email = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+
 
 function commentForm(f)
 {
