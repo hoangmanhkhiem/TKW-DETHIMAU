@@ -19,7 +19,8 @@
   .col-s-12 {width: 100%;}
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) 
+{
   /* For desktop: */
   .col-1 {width: 8.33%;}
   .col-2 {width: 16.66%;}
@@ -41,22 +42,55 @@
 	margin: 0 auto;
 }
 /*begin header*/
-.head .logo {
-  background-color: #fff;
-  float: left;
+.head__info {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
 }
-
-nav ul {
-  background-color: linear-gradient(#fff, #565454, #fff);
+.head__phone {
+  padding: 15px 10px;
+  font-weight: bolder;
+  font-size: 18px;
 }
-
-nav ul li {
-  color: #fff;
+@media only screen and (min-width: 768px) {
+  .head__phone {
+    text-align: right;
+    font-size: 22px;
+    padding: 35px 0px;
+  }
 }
-
-ul li a {
+@media only screen and (min-width: 600px) {
+  /* For tablets: */
+  .head__phone {
+    text-align: right;
+    font-size: 20px;
+    padding: 15px 0px;
+  }
+}
+.head__nav {
+  background-color: #afadad;
+  padding: 1px;
+}
+.head__nav ul {
+  padding: 0;
+  
+}
+.head__nav ul li {
   list-style: none;
+  display: inline-block;
+  padding: 0 5px;
+  height: 100%;
+}
+.head__nav ul li:hover {
+  background-color: black;
+}
+.head__nav ul li a:hover {
+  color: white;
+} 
+.head__nav ul li a {
   text-decoration: none;
+  color: black;
+  font-size: 18px;
 }
 /*end header*/
 .main{
